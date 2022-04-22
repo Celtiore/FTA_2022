@@ -1,0 +1,41 @@
+{
+  "project_info": {
+    "project_number": "929604283",
+    "project_id": "foodtrucks-addict",
+    "storage_bucket": "foodtrucks-addict.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929604283:android:9ec8bede42864f65087f9e",
+        "android_client_info": {
+          "package_name": "com.projetpos.fta"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKbDwUYts1KbG37w0vzJZvxPR_-Sz0VxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "929604283-1hiq5lgui3pt8gjjfnbgiiq148k74986.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "929604283-7skke0c94ppivqdbn88f97hs47a44f12.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.projetpos.fta"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
