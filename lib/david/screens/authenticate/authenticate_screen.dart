@@ -4,6 +4,8 @@ import 'package:fta/david/common/loading.dart';
 import 'package:fta/david/services/authentication.dart';
 
 class AuthenticateScreen extends StatefulWidget {
+  const AuthenticateScreen({Key? key}) : super(key: key);
+
   @override
   _AuthenticateScreenState createState() => _AuthenticateScreenState();
 }
@@ -41,7 +43,7 @@ class _AuthenticateScreenState extends State<AuthenticateScreen> {
   @override
   Widget build(BuildContext context) {
     return loading
-        ? Loading()
+        ? const Loading()
         : Scaffold(
             backgroundColor: Colors.white,
             appBar: AppBar(
@@ -52,18 +54,18 @@ class _AuthenticateScreenState extends State<AuthenticateScreen> {
                   : 'Register to Water Social'),
               actions: <Widget>[
                 TextButton.icon(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.person,
                     color: Colors.white,
                   ),
                   label: Text(showSignIn ? "Register" : 'Sign In',
-                      style: TextStyle(color: Colors.white)),
+                      style: const TextStyle(color: Colors.white)),
                   onPressed: () => toggleView(),
                 ),
               ],
             ),
             body: Container(
-              padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
+              padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
               child: Form(
                 key: _formKey,
                 child: Column(
@@ -78,7 +80,7 @@ class _AuthenticateScreenState extends State<AuthenticateScreen> {
                                 : null,
                           )
                         : Container(),
-                    !showSignIn ? SizedBox(height: 10.0) : Container(),
+                    !showSignIn ? const SizedBox(height: 10.0) : Container(),
                     TextFormField(
                       controller: emailController,
                       decoration:
@@ -87,7 +89,7 @@ class _AuthenticateScreenState extends State<AuthenticateScreen> {
                           ? "Enter an email"
                           : null,
                     ),
-                    SizedBox(height: 10.0),
+                    const SizedBox(height: 10.0),
                     TextFormField(
                       controller: passwordController,
                       decoration:
@@ -97,11 +99,11 @@ class _AuthenticateScreenState extends State<AuthenticateScreen> {
                           ? "Enter a password with at least 6 characters"
                           : null,
                     ),
-                    SizedBox(height: 10.0),
+                    const SizedBox(height: 10.0),
                     ElevatedButton(
                       child: Text(
                         showSignIn ? "Sign In" : "Register",
-                        style: TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.white),
                       ),
                       onPressed: () async {
                         if (_formKey.currentState?.validate() == true) {
@@ -124,10 +126,10 @@ class _AuthenticateScreenState extends State<AuthenticateScreen> {
                         }
                       },
                     ),
-                    SizedBox(height: 10.0),
+                    const SizedBox(height: 10.0),
                     Text(
                       error,
-                      style: TextStyle(color: Colors.red, fontSize: 15.0),
+                      style: const TextStyle(color: Colors.red, fontSize: 15.0),
                     )
                   ],
                 ),

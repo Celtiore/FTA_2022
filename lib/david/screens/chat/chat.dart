@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'dart:io';
 
 import 'package:firebase_storage/firebase_storage.dart';
@@ -57,7 +59,7 @@ class _ChatState extends State<Chat> {
         Column(
           children: [buildListMessage(), buildInput()],
         ),
-        isLoading ? Loading() : Container()
+        isLoading ? const Loading() : Container()
       ],
     );
   }
@@ -71,7 +73,7 @@ class _ChatState extends State<Chat> {
           if (snapshot.hasData) {
             List<Message> listMessage = snapshot.data ?? List.from([]);
             return ListView.builder(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               itemBuilder: (context, index) => MessageItem(
                   message: listMessage[index],
                   userId: chatParams.userUid,
@@ -81,7 +83,7 @@ class _ChatState extends State<Chat> {
               controller: listScrollController,
             );
           } else {
-            return Center(child: Loading());
+            return const Center(child: Loading());
           }
         },
       ),
@@ -98,16 +100,16 @@ class _ChatState extends State<Chat> {
     return Container(
       width: double.infinity,
       height: 50.0,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           border: Border(top: BorderSide(color: Colors.black, width: 0.5)),
           color: Colors.white),
       child: Row(
         children: [
           Material(
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 1.0),
+              margin: const EdgeInsets.symmetric(horizontal: 1.0),
               child: IconButton(
-                icon: Icon(Icons.image),
+                icon: const Icon(Icons.image),
                 onPressed: getImage,
                 color: Colors.blueGrey,
               ),
@@ -119,9 +121,9 @@ class _ChatState extends State<Chat> {
               onSubmitted: (value) {
                 onSendMessage(textEditingController.text, 0);
               },
-              style: TextStyle(color: Colors.blueGrey, fontSize: 15.0),
+              style: const TextStyle(color: Colors.blueGrey, fontSize: 15.0),
               controller: textEditingController,
-              decoration: InputDecoration.collapsed(
+              decoration: const InputDecoration.collapsed(
                 hintText: 'Your message...',
                 hintStyle: TextStyle(color: Colors.grey),
               ),
@@ -130,9 +132,9 @@ class _ChatState extends State<Chat> {
           // Button send message
           Material(
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 8.0),
+              margin: const EdgeInsets.symmetric(horizontal: 8.0),
               child: IconButton(
-                icon: Icon(Icons.send),
+                icon: const Icon(Icons.send),
                 onPressed: () => onSendMessage(textEditingController.text, 0),
                 color: Colors.blueGrey,
               ),
@@ -195,7 +197,7 @@ class _ChatState extends State<Chat> {
               content: content,
               type: type));
       listScrollController.animateTo(0.0,
-          duration: Duration(milliseconds: 300), curve: Curves.easeOut);
+          duration: const Duration(milliseconds: 300), curve: Curves.easeOut);
       textEditingController.clear();
     } else {
       Fluttertoast.showToast(

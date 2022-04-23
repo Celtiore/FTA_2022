@@ -34,12 +34,12 @@ class MessageItem extends StatelessWidget {
                   DateFormat('dd MMM kk:mm').format(
                       DateTime.fromMillisecondsSinceEpoch(
                           int.parse(message.timestamp))),
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: Colors.black,
                       fontSize: 12.0,
                       fontStyle: FontStyle.italic),
                 ),
-                margin: EdgeInsets.only(left: 15, right: 15, bottom: 5),
+                margin: const EdgeInsets.only(left: 15, right: 15, bottom: 5),
               )
             : Container()
       ],
@@ -53,12 +53,12 @@ class MessageItem extends StatelessWidget {
         style: TextStyle(
             color: userId == message.idFrom ? Colors.black : Colors.white),
       ),
-      padding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
+      padding: const EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
       width: 200.0,
       decoration: BoxDecoration(
           color: userId == message.idFrom ? Colors.grey : Colors.blueGrey,
           borderRadius: BorderRadius.circular(8.0)),
-      margin: EdgeInsets.only(bottom: 10.0, right: 10.0, left: 10.0),
+      margin: const EdgeInsets.only(bottom: 10.0, right: 10.0, left: 10.0),
     );
   }
 
@@ -73,13 +73,13 @@ class MessageItem extends StatelessWidget {
             return Container(
               decoration: BoxDecoration(
                 color: userId == message.idFrom ? Colors.grey : Colors.blueGrey,
-                borderRadius: BorderRadius.all(
+                borderRadius: const BorderRadius.all(
                   Radius.circular(8.0),
                 ),
               ),
               width: 200.0,
               height: 200.0,
-              child: Center(
+              child: const Center(
                 child: Loading(),
               ),
             );
@@ -92,7 +92,7 @@ class MessageItem extends StatelessWidget {
                 height: 200.0,
                 fit: BoxFit.cover,
               ),
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(8.0),
               ),
               clipBehavior: Clip.hardEdge,
@@ -102,10 +102,10 @@ class MessageItem extends StatelessWidget {
           height: 200.0,
           fit: BoxFit.cover,
         ),
-        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        borderRadius: const BorderRadius.all(Radius.circular(8.0)),
         clipBehavior: Clip.hardEdge,
       ),
-      margin: EdgeInsets.only(bottom: 10.0, right: 10.0, left: 10.0),
+      margin: const EdgeInsets.only(bottom: 10.0, right: 10.0, left: 10.0),
     );
   }
 }

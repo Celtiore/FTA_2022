@@ -5,11 +5,13 @@ import 'package:fta/david/screens/home/home_screen.dart';
 import 'package:provider/provider.dart';
 
 class SplashScreenWrapper extends StatelessWidget {
+  const SplashScreenWrapper({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<AppUser?>(context);
     if (user == null) {
-      return AuthenticateScreen();
+      return const AuthenticateScreen();
     } else {
       return HomeScreen();
     }

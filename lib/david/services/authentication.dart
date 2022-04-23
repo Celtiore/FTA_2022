@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print, duplicate_ignore
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fta/david/models/user.dart';
 import 'package:fta/david/services/database.dart';
